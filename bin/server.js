@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import 'dotenv/config';
 
 import { WebSocketServer } from 'ws'
 import http from 'http'
@@ -11,7 +12,8 @@ const wsReadyStateClosed = 3 // eslint-disable-line
 
 const pingTimeout = 30000
 
-const port = process.env.PORT || 4444
+const port = process.env.PORT || 8080
+
 const wss = new WebSocketServer({ noServer: true })
 
 const server = http.createServer((request, response) => {
